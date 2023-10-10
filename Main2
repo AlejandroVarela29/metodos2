@@ -1,0 +1,101 @@
+import java.util.Scanner;
+public class Main2{
+
+    static Scanner leer = new Scanner(System.in);
+    public static void main(String[] args){
+        System.out.println("ola");
+    }
+
+    //area lateral de un prisma 
+    public static double areaLateral(int numLados, double longitud, double altura){
+
+        do{
+            System.out.println("Cual es el numero de lados del prisma?");
+            numLados = leer.nextInt();
+        }while(numLados >=3 && numLados<=9);
+
+        do{
+            System.out.println("Cual es la longitud del prisma?");
+            longitud = leer.nextDouble();
+        }while(longitud >0 && numLados<=50);
+
+        do{
+            System.out.println("Cual es la altura del prisma?");
+            altura = leer.nextDouble();
+        }while(altura>0 && altura<=50);
+
+        double pBase=numLados * longitud;
+        double areaLaterales = pBase * altura;
+        return areaLaterales;
+    }
+
+    //area lateral de un cilindro 
+    public static double areaLateral(double radio, double altura){
+
+        do{
+            System.out.println("Cual es el radio del cilindro?");
+            radio = leer.nextDouble();
+        }while(radio >0 && radio<=50);
+
+        do{
+            System.out.println("Cual es el la altura del cilindro?");
+            altura = leer.nextDouble();
+        }while(altura >0 && altura<=50);
+
+         double pBase = (2*Math.PI) * radio;
+         double areaLaterales = pBase * altura;
+
+        return areaLaterales;
+    }
+
+    //Area lateral de una piramide 
+    public static double areaLateral(double altura, double dLados, double pBase){
+
+        do{
+            System.out.println("Cual es el la altura de la piramide?");
+            altura = leer.nextDouble();
+        }while(altura>0 && altura<=50);
+        
+        do{
+            System.out.println("Cual es el la distancia de los lados?");
+            dLados = leer.nextDoule();
+        }while(dLados>0 && dLados<=50);
+
+        do{
+            System.out.println("Cual es el perimetro de la base?");
+            pBase = leer.nextDouble();
+        }while(pBase>0 && pBase<=50);
+                                    
+        double apotemaMenor = dLados * 2;
+        double apotema = altura * apotemaMenor;
+        double areaLaterales = (pBase * apotema) / 2;
+
+        return areaLaterales;
+    }
+
+    //Area lateral de un cono
+    public static void areaLateral(){
+
+        do{
+            System.out.println("Cual es la altura?");
+            double altura = leer.nextDouble();
+        }while(altura>0 && altura<=50);
+
+        do{
+            System.out.println("Cual es la altura?");
+            double radio = leer.nextDouble();
+        }while(radio>0 && radio<=50);
+
+        do{
+            System.out.println("Cual es el perimetro de la base?");
+            double pBase = leer.nextDouble();
+        }while(pBase>0 && pBase<=50);
+
+        double generatriz = altura * radio;
+        double areaLaterales = (pBase * generatriz) / 2 ;
+        System.out.println("El area lateral es " + areaLaterales);
+    }
+
+    //area lateral de un prisma
+    public static double areaTotal(double areaLateral, double perimetro, )
+}
